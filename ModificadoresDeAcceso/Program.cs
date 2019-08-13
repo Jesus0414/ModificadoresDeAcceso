@@ -19,14 +19,32 @@ namespace ModificadoresDeAcceso
 
             try
             {
-                cliente.Curp = "12345678912345679";
+                cliente.Curp = "123456789123456789";
                 Console.WriteLine("Curp:" + cliente.Curp);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("La CURP debe de ser de 18 caracteres");
             }
-            
+
+            //
+
+            Cuenta cuenta = new Cuenta();
+            cuenta.Propietario = cliente;
+            cuenta.Saldo = 25;
+
+            Console.WriteLine("Curp: " + cuenta.Propietario.Curp);
+            Console.WriteLine("Saldo: " + cuenta.Saldo);
+
+            try
+            {
+                cuenta.Identificador = "98765432100";
+                Console.WriteLine("Identificador: " + cuenta.Identificador);
+            }
+            catch(Exception f)
+            {
+                Console.WriteLine("El identidicador debe tener entre 10 y 14 caracteres");
+            }
 
             Console.Read();
         }

@@ -8,8 +8,8 @@ namespace ModificadoresDeAcceso
 {
     class Cuenta
     {
-        public float saldo { get; set; }
-        public Cliente cliente { get; set; }
+        public float Saldo { get; set; }
+        public Cliente Propietario { get; set; }
         private string _identificador;
         public string Identificador
         {
@@ -19,15 +19,25 @@ namespace ModificadoresDeAcceso
             }
             set
             {
-                if (value.Length ==10)
+                if (value.Length ==10 || value.Length == 11 || value.Length == 12 || value.Length == 13 || value.Length == 14)
                 {
                     _identificador = value;
                 }
                 else
                 {
-                    throw new Exception("Ocupa ser 10 caracteres");
+                    throw new Exception("Ocupa ser entre 10 y 14 caracteres");
                 }
             }
+        }
+
+        public void Retirar()
+        {
+
+        }
+
+        public void Depositar()
+        {
+
         }
     }
 }
